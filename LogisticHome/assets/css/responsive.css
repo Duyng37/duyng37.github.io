@@ -1,0 +1,204 @@
+/* Mobile & Tablet */
+
+@media (max-width: 1023px) {
+    .header__nav-list {
+        display: none;
+    }
+    .nav__bars-btn {
+        display: block;
+    }
+}
+
+
+/* Tablet */
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .banner {
+        height: 382px;
+    }
+    .banner__text {
+        left: 498px;
+        top: 90px;
+        width: 220px;
+    }
+    .banner__text-heading {
+        font-size: 12px;
+    }
+    .banner__text-below {
+        font-size: 8px;
+        width: unset;
+    }
+    .banner__button {
+        width: 80px;
+        height: 24px;
+    }
+    .banner__button a {
+        font-size: 8px;
+        line-height: 0;
+    }
+    .shipping {
+        padding: 0 46px;
+    }
+    .shipping__track-input {
+        width: 122px;
+    }
+    .shipping__track-search::after {
+        right: -108px;
+    }
+    .shipping__cost-place {
+        width: 134px;
+    }
+    .shipping__cost-area {
+        width: 134px;
+    }
+    .shipping__cost-weight {
+        width: 82px;
+    }
+    .shipping__track-search {
+        display: flex;
+    }
+    .shipping__method-box img {
+        width: 416px;
+    }
+    .shipping__method-box-tablet {
+        margin-top: -126px;
+    }
+    .shipping__detail {
+        padding: 10px 46px 30px;
+    }
+    .shipping__detail-description {
+        font-size: 20px;
+    }
+    .shipping__track-heading {
+        font-size: 16px;
+    }
+    .shipping__cost-heading {
+        font-size: 16px;
+    }
+    .shipping__track-input,
+    .shipping__cost-place,
+    .shipping__cost-area,
+    .shipping__cost-weight,
+    .shipping__track-button,
+    .shipping__cost-check {
+        font-size: 12px;
+    }
+    .shipping__detail-description-text {
+        font-size: 16px;
+    }
+    .shipping__method-container {
+        padding: 245px 46px 0;
+    }
+    .truck-transport__method {
+        padding: 0 46px;
+    }
+    .truck-transport__method-commit-text {
+        width: unset;
+        font-size: 14px;
+    }
+    .truck-transport__method-packet-heading {
+        font-size: 14px;
+    }
+    .truck-transport__method-packet-des {
+        font-size: 16px;
+    }
+    .truck-transport__method-packet-btn {
+        height: 40px;
+        width: 120px;
+    }
+    .truck-transport__method-packet--active {
+        padding: 0;
+    }
+    .truck-transport__method--colored,
+    .truck-transport__method--white {
+        height: 48px;
+    }
+    .footer__banner-info-heading {
+        font-size: 18px;
+    }
+    .footer__banner-info-text {
+        font-size: 14px;
+    }
+    .footer__banner-btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer__banner-try,
+    .footer__banner-signup {
+        height: 38px;
+        width: 98px;
+    }
+    .footer__banner-try {
+        margin-bottom: 10px;
+    }
+    .footer__banner {
+        height: 134px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 739px) {
+    .banner__text {
+        left: 212px;
+        top: 21px;
+        width: 148px;
+    }
+    .banner {
+        height: 194px;
+    }
+    .banner__text-heading {
+        font-size: 10px;
+    }
+    .banner__text-below {
+        font-size: 6px;
+        width: unset;
+    }
+    .banner__button {
+        width: 66px;
+        height: 15px;
+    }
+    .banner__button a {
+        font-size: 8px;
+        line-height: 0;
+    }
+    .shipping__track-heading {
+        font-size: 12px;
+        padding: 4px 0 4px 4px;
+    }
+    .shipping__cost-heading {
+        font-size: 12px;
+        padding: 8px 0 4px 4px;
+    }
+    .shipping {
+        display: block;
+    }
+    .shipping__track-search {
+        display: flex;
+    }
+    .shipping__track-input {
+        height: 26px;
+    }
+    .shipping__track-button {
+        height: 26px;
+    }
+    .shipping__track-search::after {
+        display: none;
+    }
+    .shipping__cost-place {
+        height: 26px;
+        width: 122px;
+    }
+    .shipping__cost-area {
+        height: 26px;
+        width: 122px;
+    }
+    .shipping__cost-weight {
+        height: 26px;
+        width: 122px;
+    }
+    .shipping__cost-input {
+        gap: 2px;
+    }
+}

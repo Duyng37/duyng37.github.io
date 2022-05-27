@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.14);
+}
+
+.img-slides {
+    position: relative;
+    width: 1200px;
+    height: 800px;
+}
+
+.slide {
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    clip-path: circle(0.5% at 0 50%);
+}
+
+.slide.active {
+    clip-path: circle(150% at 0 51%);
+    transition: 1.5s;
+}
+
+.slide img {
+    width: 1200px;
+    height: 800px;
+    border-radius: 10px;
+}
+
+.dot-nav {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+
+.dot-nav .btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    padding: 8px;
+    margin: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn.active {
+    background-color: #a9ed85;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.55);
+}
+
+.nav-btn {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    height: 800px;
+}
+
+.prev-btn,
+.next-btn {
+    padding: 0 16px;
+    line-height: 800px;
+    fill: #d4d3cf;
+    cursor: pointer;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.14);
+    transition: .5s;
+}
+
+.prev-btn svg,
+.next-btn svg {
+    width: 30px;
+}

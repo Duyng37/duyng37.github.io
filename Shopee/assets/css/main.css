@@ -368,6 +368,7 @@
 .auth-form {
     width: 500px;
     overflow: hidden;
+    animation: fadeIn ease-in .3s;
 }
 
 .auth-form__container {

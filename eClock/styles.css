@@ -1,0 +1,87 @@
+:root {
+    --text-color: #333;
+    --background-color: #fff;
+}
+
+html.dark {
+    --text-color: #fff;
+    --background-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: ease-in-out .5s;
+}
+
+.am {
+    display: none;
+}
+
+.pm {
+    display: none;
+}
+
+.active {
+    display: inline-block;
+}
+
+.dark-mode.active {
+    display: inline-block;
+}
+
+.light-mode.active {
+    display: inline-block;
+}
+
+.dark-mode {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.light-mode {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.first-line {
+    margin-top: 50%;
+    text-align: center;
+}
+
+.second-line {
+    text-align: center;
+}
+
+.hour {}
+
+.minutes {}
+
+.seconds {}
+
+.am {}
+
+.pm {}
+
+.month {}
+
+.day-in-week {}
+
+.day-in-month {}

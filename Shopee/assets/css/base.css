@@ -83,6 +83,7 @@ html {
     bottom: 0;
     display: flex;
     animation: fadeIn linear .2s;
+    display: none;
 }
 
 .modal__overlay {
@@ -99,7 +100,19 @@ html {
     margin: auto;
     z-index: 1;
     border-radius: 5px;
-    animation: growth linear .2s;
+    animation: fadeIn linear .2s;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.auth-form.open {
+    display: block;
+}
+
+.close {
+    display: none;
 }
 
 

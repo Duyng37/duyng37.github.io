@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDoList</title>
+
+</head>
+
+<body>
+    <div class="todo">
+        <div class="todo__header">
+            <h1 class="todo__heading">My To Do List</h1>
+            <div class="todo__input-area">
+                <input type="text" name="" id="input" placeholder="Enter Works">
+                <button class="todo__input-btn">Add</button>
+            </div>
+        </div>
+        <ul class="todo__list">
+
+        </ul>
+    </div>
+
+    <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
+
+        const addBtn = $('.todo__input-btn')
+        const todoList = $('.todo__list')
+        const todoItems = $$('.todo__items')
+        const todoListItems = $$('.todo__list-items')
+        const deleteButtons = $$('.delete')
+        const nothingToShow = $('.nothing-to-show')
+        const DOING = 'doing'
+        const DONE = 'done'
+
+        const app = {
+            todos: [{
+                work: 'Hit The Gym',
+                status: DOING
+            }, {
+                work: 'Pay Bills',
+                status: DOING
+            }, {
+                work: 'Feed The Cat',
+                status: DOING
+            }],
+            render() {
+                if (app.todos.length > 0) {
+                    const html = app.todos.map((todo, index) => {
+                        return `
+                        <div class="todo__list-items">    
+                        <li class="todo__items ${todo.status}" data-index="${index}">${todo.work}
+                                </li>
+                                <span class="delete" data-index="${index}">&times</span>
+                                </div>
+                        `
+                    }).join('')
+                    todoList.innerHTML = html
+                } else {
+                    todoList.innerHTML = '<li class="nothing-to-show">You have no work todo. Enter works...</li>'
+                }
+            },
+            handleEvent() {
+                addBtn.onclick = () => {
+                    const newTodo = {
+                        work: input.value,
+                        status: DOING
+                    }
+                    if (input.value.length > 0) {
+                        app.todos.push(newTodo)
+                        app.render()
+                    } else {
+                        alert('You need to add some works')
+                    }
+                    input.value = ''
+                    input.focus()
+                }
+
+                todoList.onclick = (event) => {
+                    if (event.target.matches('.todo__items')) {
+                        const index = event.target.dataset.index
+                        let newStatus = app.todos[index].status
+                        if (newStatus === DOING) {
+                            newStatus = DONE
+                        } else {
+                            newStatus = DOING
+                        }
+                        const newToDo = {
+                            work: app.todos[index].work,
+                            status: newStatus
+                        }
+                        app.todos[index] = newToDo
+                        app.render()
+                    } else if (event.target.matches('.delete')) {
+                        const deleteBtn = event.target.closest('.delete')
+                        const index = deleteBtn.dataset.index
+                        app.todos.splice(index, 1)
+                        app.render()
+                    }
+                }
+            }
+        }
+
+        app.render()
+        app.handleEvent()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Slideshow3</title>
+</head>
+
+<body>
+    <div class="img-slides">
+        <div class="slide active">
+            <img src="./assets/img/1.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./assets/img/2.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./assets/img/3.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./assets/img/4.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./assets/img/5.jpg" alt="">
+        </div>
+        <div class="dot-nav">
+            <div class="btn active"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+        <div class="nav-btn">
+            <div class="prev-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+
+            </div>
+            <div class="next-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
+
+        const slides = $$('.slide')
+        const btns = $$('.btn')
+        const prevbtn = $('.prev-btn')
+        const nextbtn = $('.next-btn')
+
+        const app = {
+            currentIndex: 0,
+            intervalId: null,
+            handleEvent() {
+                btns.forEach((btn, index) => {
+                    btn.onclick = () => {
+                        app.currentIndex = index
+                        app.slide()
+                        clearInterval(intervalId)
+                        app.autoplay()
+                    }
+                })
+                prevbtn.onclick = () => {
+                    if (app.currentIndex === 0) {
+                        app.currentIndex = slides.length - 1
+                        app.slide()
+                    } else {
+                        app.currentIndex--
+                            app.slide()
+                    }
+
+                    clearInterval(intervalId)
+                    app.autoplay()
+                }
+                nextbtn.onclick = () => {
+                    if (app.currentIndex === slides.length - 1) {
+                        app.currentIndex = 0
+                        app.slide()
+                    } else {
+                        app.currentIndex++
+                            app.slide()
+                    }
+
+                    clearInterval(intervalId)
+                    app.autoplay()
+                }
+            },
+            slide() {
+                slides.forEach((slide, index) => {
+                    if (app.currentIndex === index) {
+                        slide.classList.add('active')
+                        btns[index].classList.add('active')
+                    } else {
+                        slide.classList.remove('active')
+                        btns[index].classList.remove('active')
+
+                    }
+                })
+            },
+            autoplay() {
+                intervalId = setInterval(function() {
+                    if (app.currentIndex === slides.length - 1) {
+                        app.currentIndex = 0
+                        app.slide()
+                    } else {
+                        app.currentIndex++;
+                        app.slide()
+                    }
+                }, 3000)
+            }
+        }
+        app.handleEvent()
+        app.slide()
+        app.autoplay()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* const app = {
+            currentIndex: 0,
+            intervalId: null,
+            handleEvent: function() {
+                btns.forEach((btn, index) => {
+                    btn.onclick = function() {
+                        app.currentIndex = index;
+                        app.slide();
+                        clearInterval(intervalId);
+                        app.loop();
+                    }
+                })
+                prevbtn.onclick = function() {
+                    if (app.currentIndex === 0) {
+                        app.currentIndex = slides.length - 1;
+                    } else if (app.currentIndex <= slides.length - 1) {
+                        app.currentIndex--;
+                    }
+                    app.slide();
+
+                    clearInterval(intervalId);
+                    app.loop();
+                }
+                nextbtn.onclick = function() {
+                    if (app.currentIndex < slides.length - 1) {
+                        app.currentIndex++;
+                    } else {
+                        app.currentIndex = 0;
+                    }
+                    app.slide();
+
+                    clearInterval(intervalId);
+                    app.loop();
+                }
+            },
+            slide: function() {
+                slides.forEach((slide, index) => {
+                    if (app.currentIndex === index) {
+                        slide.classList.add('active')
+                        btns[index].classList.add('active')
+                    } else {
+                        slide.classList.remove('active')
+                        btns[index].classList.remove('active')
+
+                    }
+                })
+            },
+            loop: function() {
+                intervalId = setInterval(function() {
+                    if (app.currentIndex < slides.length - 1) {
+                        app.currentIndex++;
+                        app.slide();
+                    } else {
+                        app.currentIndex = 0;
+                        app.slide();
+                    }
+                }, 10000)
+            },
+        }
+
+        app.slide()
+        app.handleEvent()
+        app.loop() */
+    </script>
+</body>
+
+</html>

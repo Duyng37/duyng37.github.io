@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Clock</title>
+
+</head>
+
+<body>
+    <button class="dark-mode active">DarkMode</button>
+    <button class="light-mode">LightMode</button>
+    <div class="clock">
+        <div class="first-line">
+            <span class="hour"></span> :
+            <span class="minutes"></span> :
+            <span class="seconds"></span>
+            <span class="am">AM</span>
+            <span class="pm">PM</span>
+        </div>
+        <div class="second-line">
+            <span class="month"></span>,
+            <span class="day-in-week"></span>
+            <span class="day-in-month"></span>
+
+        </div>
+    </div>
+
+    <script>
+        const $ = document.querySelector.bind(document)
+        const $$ = document.querySelectorAll.bind(document)
+
+        const hour = $('.hour')
+        const minutes = $('.minutes')
+        const seconds = $('.seconds')
+        const dayInWeek = $('.day-in-week')
+        const month = $('.month')
+        const dayInMonth = $('.day-in-month')
+        const am = $('.am')
+        const pm = $('.pm')
+        const darkMode = $('.dark-mode')
+        const lightMode = $('.light-mode')
+        const html = $('html')
+
+        const clock = $('.clock')
+
+        const date = new Date()
+        const getYear = date.getFullYear()
+        const getMonth = date.getMonth()
+        const getDate = date.getDate()
+        const getHour = date.getHours()
+        const getMinutes = date.getMinutes()
+        const getSecond = date.getSeconds()
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        const getDayInWeek = weekday[date.getDay()]
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        const monthsInYear = months[getMonth]
+
+
+        setInterval(render, 1000)
+
+        const formatHour = function() {
+            if (getHour <= 12) {
+                return getHour
+            } else if (getHour >= 13 && getHour <= 24) {
+                return getHour % 12
+            }
+        }
+        if (getHour < 12) {
+            am.classList.add('active')
+        } else if (getHour >= 12 && getHour <= 24) {
+            pm.classList.add('active')
+        }
+
+        function render() {
+            const date = new Date()
+            const getYear = date.getFullYear()
+            const getMonth = date.getMonth()
+            const getDate = date.getDate()
+            const getHour = date.getHours()
+            const getMinutes = date.getMinutes()
+            const getSecond = date.getSeconds()
+            const formattedHour = formatHour()
+            const formattedSeconds = date.getSeconds()
+            hour.innerHTML = formattedHour < 10 ? '0' + formattedHour : formattedHour
+            minutes.innerHTML = getMinutes < 10 ? '0' + getMinutes : getMinutes
+            seconds.innerHTML = formattedSeconds < 10 ? '0' + formattedSeconds : formattedSeconds
+            month.innerHTML = monthsInYear
+            dayInWeek.innerHTML = getDayInWeek
+            dayInMonth.innerHTML = getDate
+                /* if (getHour >= 18) {
+                    html.classList.add('dark')
+                } else if (getHour >= 8) {
+                    html.classList.remove('dark')
+
+                } */
+        }
+
+        darkMode.onclick = () => {
+            html.classList.add('dark')
+            darkMode.classList.remove('active')
+            lightMode.classList.add('active')
+        }
+        lightMode.onclick = () => {
+            html.classList.remove('dark')
+            lightMode.classList.remove('active')
+            darkMode.classList.add('active')
+        }
+    </script>
+</body>
+
+</html>

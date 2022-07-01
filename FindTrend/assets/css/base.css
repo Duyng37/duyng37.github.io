@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+:root {
+    --primary-color:#45EDA1;
+    --green-second: #87D322;
+    --button-hover: #8CC83A;
+    --black-color: #000000;
+    --black-second: #2B2B2B;
+    --grey-first: #8B8B8B;
+    --grey-second: #ADADAD;
+    --grey-third: #F5F5F5;
+    --grey-fourth: #F1F1F1;
+    --white-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Effra', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    font-weight: 400;
+    line-height: 1.6rem;
+}
+
+body {
+    position: relative;
+}

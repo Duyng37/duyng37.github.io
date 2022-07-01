@@ -16,6 +16,11 @@
     height: 100px;
     max-width: 1440px;
     margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .header__logo {
@@ -116,7 +121,8 @@
     display: flex;
     justify-content: space-between;
     max-width: 1440px;
-    margin: 40px auto;
+    margin: 0 auto 40px;
+    padding-top: 140px;
 }
 
 .header__banner-left {
@@ -168,6 +174,7 @@
 .header__banner-left-input i {
     font-size: 2.2rem;
     color: #5E626E;
+    opacity: 0.7;
 }
 
 .header__banner-input {
@@ -195,6 +202,7 @@
 .header__banner-left-languages i {
     font-size: 2.6rem;
     color: #5E626E;
+    opacity: 0.7;
 }
 
 
@@ -204,6 +212,10 @@
     
     font-size: 1.4rem;
     color: #A3A6B1;
+}
+
+.header__banner-left-languages-dropdown {
+    cursor: pointer;
 }
 
 .header__banner-left-search-btn {
@@ -272,7 +284,8 @@
     justify-content: center;
 }
 
-.section__body-searchnfind-customcss {
+.section__body-searchnfind:hover {
+    cursor: pointer;
     border: 0;
     box-shadow: 0px 18px 56px rgba(0, 0, 0, 0.05);
 }
@@ -428,13 +441,18 @@
 
 .section__category-content:hover {
     cursor: pointer;
-    opacity: 0.8;
+    border: 0;
+    background: #FF5352;
+}
+
+.section__category-content:hover .section__category-content-heading, 
+.section__category-content:hover .section__category-content-des {
+    color: #fff;
 }
 
 .section__category-content-customcss {
     border: 0;
     background: #FF5352;
-    color: var(--white-color);
 }
 
 .section__category-content-img {
@@ -484,7 +502,8 @@
     margin-top: 36px;
 }
 
-.section__findjob-box-customcss {
+.section__findjob-box:hover {
+    cursor: pointer;
     border: 0;
     box-shadow: 0px 14px 44px rgba(0, 0, 0, 0.07);
 }
@@ -689,8 +708,22 @@
     opacity: 0.7;
 }
 
-.footer__socials img {
+.footer__socials i {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    width: 90%;
+    color: #1e253a;
+    background-color: #fff;
+}
 
+.footer__socials i:hover {
+    color: #ff6652;
+    background-color: #fff;
+}
+
+.fa-brands {
+    line-height: 0.8;
 }
 
 

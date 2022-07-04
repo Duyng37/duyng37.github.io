@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
+
 :root {
     --primary-color:#45EDA1;
     --green-second: #87D322;
@@ -28,6 +29,7 @@ html {
     font-size: 62.5%;
     font-weight: 400;
     line-height: 1.6rem;
+    overflow-x: hidden;
 }
 
 body {

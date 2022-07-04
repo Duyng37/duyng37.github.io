@@ -13,9 +13,12 @@
     }
 }
 
-@media only screen and (min-width: 596px) and (max-width: 1300px) {
+@media only screen and (min-width: 596px) and (max-width: 1450px) {
     .header__navbar {
-        margin: 0 50px;
+        padding: 0 50px;
+    }
+    .footer__wrapper {
+        padding: 0 50px;
     }
 }
 

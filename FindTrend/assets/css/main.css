@@ -114,7 +114,7 @@
 }
 
 .header__banner-btn-box p {
-    font-family: "GoodDogNewW00-Regular", sans-serif;
+    font-family: "GoodDog Plain", sans-serif;
     max-width: 93px;
     color: var(--white-color);
     position: absolute;
@@ -210,7 +210,7 @@
 }
 
 .section__body p {
-    font-family: 'GoodDogNewW00-Regular', sans-serif;
+    font-family: "GoodDog Plain", sans-serif;
     font-size: 1.4rem;
     line-height: 1.4rem;
     text-align: center;
@@ -371,10 +371,6 @@
     cursor: pointer;
 }
 
-.section__fourth-platform-img-wrapper:nth-child(2) {
-    background-color: #A8FF35;
-}
-
 .section__fourth-platform-img-wrapper img {
     width: 60px;
     height: 60px;
@@ -447,7 +443,7 @@
 }
 
 .section__fifth-discount {
-    font-family: 'GoodDogNewW00-Regular', sans-serif;
+    font-family: 'GoodDog Plain', sans-serif;
     position: absolute;
     font-size: 1.4rem;
     line-height: 1.4rem;

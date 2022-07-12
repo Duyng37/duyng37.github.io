@@ -229,6 +229,7 @@
         console.log(current);
 
         a.forEach((a) => {
+            window.location.hash = current;
             a.classList.remove("active");
             if (a.classList.contains(current)) {
                 a.classList.add("active");

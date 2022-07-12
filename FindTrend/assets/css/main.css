@@ -49,6 +49,7 @@
 .header__btn-login {
     color: var(--white-color);
     font-size: 1.8rem;
+    user-select: none;
 }
 
 .header__btn-login:hover {
@@ -64,6 +65,7 @@
     border-radius: 40px;
     font-size: 1.8rem;
     font-weight: 600;
+    user-select: none;
 }
 
 .header__btn-register:hover {

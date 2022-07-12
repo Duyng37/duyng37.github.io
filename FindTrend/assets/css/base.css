@@ -35,3 +35,7 @@ html {
 body {
     position: relative;
 }
+
+button {
+    user-select: none;
+}

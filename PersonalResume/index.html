@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <title>Personal Resume</title>
 </head>
 <body>
@@ -214,6 +215,7 @@
         const a = document.querySelectorAll('.header__navlist-link')
         const home = document.querySelector('.home')
 
+
         window.onscroll = () => {
 
         scrollFunction()
@@ -223,22 +225,31 @@
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             if (pageYOffset >= sectionTop - 300) {
-            current = section.getAttribute("id"); }
+            current = section.getAttribute("id"); 
+        }
         });
 
-        console.log(current);
+        
 
         a.forEach((a) => {
             window.location.hash = current;
+
             a.classList.remove("active");
             if (a.classList.contains(current)) {
                 a.classList.add("active");
             }
         });
-
         };
 
-        
+        // a.forEach(anchor => {
+        //     anchor.addEventListener('click', function (e) {
+        //         e.preventDefault();
+
+        //     document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+        //         behavior: 'smooth'
+        //         });
+        //     });
+        // })
         
     </script>
 </body>

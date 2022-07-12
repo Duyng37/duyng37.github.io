@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Personal Resume</title>
 </head>
 <body>
@@ -20,22 +21,22 @@
         <div class="header__navbar">
             <ul class="header__navlist">
                 <li class="header__navlist-item">
-                    <a href="#" class="header__navlist-link active">Home</a>
+                    <a href="#home" class="header__navlist-link active home">Home</a>
                 </li>
                 <li class="header__navlist-item">
-                    <a href="#1" class="header__navlist-link">About me</a>
+                    <a href="#about-me" class="header__navlist-link about-me">About me</a>
                 </li>
                 <li class="header__navlist-item">
-                    <a href="#2" class="header__navlist-link">Services</a>
+                    <a href="#services" class="header__navlist-link services">Services</a>
                 </li>
                 <li class="header__navlist-item">
-                    <a href="#3" class="header__navlist-link">Contributors</a>
+                    <a href="#contributors" class="header__navlist-link contributors">Contributors</a>
                 </li>
                 <li class="header__navlist-item">
-                    <a href="#4" class="header__navlist-link">Portfolio</a>
+                    <a href="#portfolio" class="header__navlist-link portfolio">Portfolio</a>
                 </li>
                 <li class="header__navlist-item">
-                    <a href="#5" class="header__navlist-link">Contact</a>
+                    <a href="#contact" class="header__navlist-link contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -44,7 +45,7 @@
         </div>
     </header>
     <main class="main">
-        <div class="banner">
+        <section class="banner" id="home">
             <img class="banner__background" src="./assets/img/accaro.png" alt="Accaro">
             <div class="banner__content">
                 <div class="banner__content-left">
@@ -73,9 +74,9 @@
                     <img class="banner__content-line" src="./assets/img/Vector 1.png" alt="">
                 </div>
             </div>
-            <span  id="1"></span>
-        </div>
-        <div class="section">
+        </section>
+        <section class="section" id="about-me">
+            <br>
             <img class="section__reactangel-right" src="./assets/img/Rectangle 3797.png" alt="reactangel">
             <div class="section__info">
                 <h1 class="section__heading">About me</h1>
@@ -96,9 +97,10 @@
                 <img class="section__about-image-line" src="./assets/img/Vector 1 (1).png" alt="">
             </div>
             <img class="section__reactangel-left" src="./assets/img/Rectangle 3798.png" alt="reactangel">
-        </div>
-        <span  id="2"></span>
-        <div class="section">
+        </section>
+
+        <section class="section" id="services" >
+        <br>
             <img class="section__reactangel-right section__reactangel-right-customcss" src="./assets/img/Rectangle 3797.png" alt="reactangel">
             <div class="section__info">
                 <h1 class="section__heading">Services</h1>
@@ -130,9 +132,10 @@
                         there someplace or anywhere.</p>
                 </div>
             </div>
-            <span  id="3"></span>
-        </div>
-        <div class="section">
+        </section>
+
+        <section class="section" id="contributors" >
+        <br>
             <div class="section__info">
                 <h1 class="section__heading">Contributors</h1>
                 <p class="section__des">They support products that simplify and automate decent mechanic processes saving time for activities.</p>
@@ -149,9 +152,9 @@
             <img class="section__reactangel-left section__reactangel-left-customcss" src="./assets/img/Rectangle 3798.png" alt="reactangel">
             <br>
             <br>
-            <span id="4"></span>
-        </div>
-        <div class="section">
+        </section>
+        <section class="section" id="portfolio">
+            <br>
             <div class="section__info">
                 <h1 class="section__info-subheading">Our Regular Updated</h1>
                 <h1 class="section__info-heading">Portfolio.</h1>
@@ -165,12 +168,11 @@
                     <img src="./assets/img/unsplash_9IcKPSQ9G5Q.png" alt="" class="section__portfolio-box-img">
                 </div>
             </div>
-        </div>
+        </section>
 
         <img src="./assets/img/Ornament 22.png" alt="" class="section__line">
-        <span id="5"></span>
 
-        <div class="section">
+        <section class="section" id="contact">
             <div class="section__info">
                 <h1 class="section__info-heading">Contact.</h1>
                 <p class="section__des">Truth is a deep kindness that teaches us to be content in our everyday life and share with the people the same happiness. the feeling of sunday is the same everywhere: heavy, melancholy, standing still.</p>
@@ -191,8 +193,52 @@
                 </a>
             </div>
             <p class="section__contact-copyright">© 2021 AbbVie Inc. . All rights reserved</p>
-        </div>
+        </section>
     </main>
     <footer class="footer"></footer>
+    
+    <script>
+        // window.onscroll = function() {scrollFunction()};
+
+
+        function scrollFunction() {
+        if (window.pageYOffset > 100) {
+            document.querySelector(".header").style.backgroundColor = "white";
+        } else {
+            document.querySelector(".header").style.backgroundColor = "transparent";
+        }
+        }
+
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll(".header__navlist-item");
+        const a = document.querySelectorAll('.header__navlist-link')
+        const home = document.querySelector('.home')
+
+        window.onscroll = () => {
+
+        scrollFunction()
+
+        var current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 300) {
+            current = section.getAttribute("id"); }
+        });
+
+        console.log(current);
+
+        a.forEach((a) => {
+            a.classList.remove("active");
+            if (a.classList.contains(current)) {
+                a.classList.add("active");
+            }
+        });
+
+        };
+
+        
+        
+    </script>
 </body>
 </html>

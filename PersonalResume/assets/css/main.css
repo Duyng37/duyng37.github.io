@@ -9,6 +9,7 @@
     left: 0;
     right: 0;
     z-index: 999;
+    background-color: transparent;
 }
 
 .header__logo {
@@ -361,6 +362,7 @@
     margin: 0 auto;
     padding: 90px 0 90px;
     max-width: 1440px;
+    max-height: 716px;
 }
 
 .section__service-details {

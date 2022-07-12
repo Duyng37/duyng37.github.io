@@ -279,7 +279,7 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 724px;
+        height: 100vh;
         z-index: 4;
         background-color: var(--black-color);
         display: flex;

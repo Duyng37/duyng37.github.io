@@ -231,7 +231,7 @@
             <div class="section__fifth">
                 <div class="section__third-heading section__fifth-heading">Get your best deal</div>
                 <div class="section__fifth-switch-btn">
-                    <p class="section__fifth-monthly">Monthly</p>
+                    <p class="section__fifth-monthly monthly-yearly-active">Monthly</p>
                     <label class="switch">
                         <input type="checkbox">
                         <span class="slider round"></span>
@@ -349,6 +349,20 @@
         closeBtn.onclick = () => {
             overlay.classList.remove('show')
             mobileMenu.classList.remove('show')
+        }
+
+        const btnSlide = $('.slider')
+        const monthly = $('.section__fifth-monthly')
+        const yearly = $('.section__fifth-yearly')
+
+        btnSlide.onclick = () => {
+            if (monthly.classList.contains('monthly-yearly-active')) {
+                monthly.classList.remove('monthly-yearly-active')
+                yearly.classList.add('monthly-yearly-active')
+            } else {
+                monthly.classList.add('monthly-yearly-active')
+                yearly.classList.remove('monthly-yearly-active')
+            }
         }
 
     </script>

@@ -369,6 +369,7 @@
 .section__fourth-platform-img-wrapper:hover {
     background-color: #A8FF35;
     cursor: pointer;
+    transition: ease-in-out .5s;
 }
 
 .section__fourth-platform-img-wrapper img {
@@ -432,7 +433,9 @@
     font-size: 2.4rem;
     line-height: 2.9rem;
     font-weight: 500;
-    color: var(--white-color);
+    color: var(--grey-third);
+    opacity: 0.5;
+
 }
 
 .section__fifth-yearly {
@@ -440,6 +443,11 @@
     line-height: 2.9rem;
     color: var(--grey-third);
     opacity: 0.5;
+}
+
+.monthly-yearly-active {
+    color: var(--white-color);
+    opacity: 1;
 }
 
 .section__fifth-discount {
